@@ -1,0 +1,473 @@
+@charset "utf-8";
+*, *::before, *::after { 
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  line-height: 1;
+  vertical-align: baseline;
+  list-style-type: none;
+  user-select: none;
+}
+
+
+
+
+//------------------------------------------------------
+
+//        ----- SLOT MACHINE -----
+//-----------------------------------------
+
+
+
+
+body {
+  background-color: #bdc3c7;
+  background-color: #333;
+  font-weight: bold;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+// btn-container ---
+.unit {
+  width: 98%;
+  margin: 20px auto; 
+  .unit-inner {
+    .btn-container {
+      .active-btn-container {
+        .check-out {
+          width: calc(60% - 10px);
+          font-size: 1.2rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          letter-spacing: 1px;
+          padding: .5rem;
+          padding-top: .6rem;
+          border-radius: 20px;
+          margin: 0 auto 10px;
+          color: #fff; // yellow version text color set // #fff when bg on      
+          color: rgb(255, 221, 25); // yellow version text color set // #fff when bg on      
+          // background-color: rgb(189, 32, 242);  // check out btn purple version //
+          // border: 8px outset rgb(189, 2, 212);  // check out btn purple version //
+          // color: rgb(143, 130, 122); // yellow version text color set // when bg off      
+          // background-color: rgb(254, 218, 13);  // check out btn purple version // bg
+          border: 8px outset rgb(254, 188, 13); // check out btn purple version //
+        }
+        .active-btn-wrapper {
+          display: flex;
+          justify-content: center;
+          .btn-insert {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            color: rgb(115, 225, 20); // bg
+            // background-color: rgb(79, 196, 21); // bg
+            border: 8px outset rgb(79, 166, 1);
+            width: calc(50% - 10px);
+            padding: .5rem;
+            padding-top: .6rem;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            border-radius: 20px;
+            margin: 5px 5px;
+          }
+          .bet2x-wrapper {
+            // width: calc(50% - 10px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 0px; //////////////////////// 調整 !!!
+            .btn-bet2x {
+              // display: flex;
+              // align-items: center;
+              // justify-content: center;
+              color: #fff;
+              color: rgb(250, 46, 250); // bright color // bg
+              color: rgb(189, 2, 212);; // dark color // bg
+              // background-color: rgb(255, 85, 83);
+              // border: 8px outset rgb(252, 55, 53);
+              // background-color: rgb(189, 32, 242); // bet2x btn purple version // bg
+              border: 8px outset rgb(189, 2, 212); // bet2x btn purple version //
+              padding: .5rem;
+              padding-top: .6rem;
+              font-size: 1.2rem;
+              letter-spacing: 1px;
+              border-radius: 20px;
+              margin: 5px 5px; //////////////////////// 調整 !!!
+            }
+            .btn-bet5x {
+              color: #fff;
+              color: rgb(189, 2, 212); // bg
+              color: rgb(203, 46, 44); // bg
+              // background-color: rgb(255, 85, 83);
+              border: 8px outset rgb(252, 55, 53);
+              // background-color: rgb(189, 32, 242); // bet2x btn purple version // bg
+              // border: 8px outset rgb(189, 2, 212); // bet2x btn purple version //
+              padding: .5rem;
+              padding-top: .6rem;
+              font-size: 1.2rem;
+              letter-spacing: 1px;
+              border-radius: 20px;
+              margin: 5px 5px; //////////////////////// 調整 !!!
+            }
+          }
+        } 
+      }
+
+      .point-wrapper {
+        display: flex;
+        justify-content: center;
+        margin: 10px 0;
+        .win-wrapper {
+          width: calc(25% - 6px);
+          margin: 0 3px;
+          padding: .3rem;
+          border-radius: 20px;
+          // background-color: #f0343a; // red
+          // background-color: #727070; // gray
+          border: 4px outset rgb(186, 180, 180); // bg 
+          .win-text {
+            font-size: .8rem;
+            margin-top: 3px;
+            color: yellow;
+            text-align: center;
+            letter-spacing: 1px;
+          }
+          .win-point {
+            font-size: 1.2rem;
+            text-align: center;
+            margin-top: 5px;
+            color: rgb(226, 219, 219); // bg 
+          }
+        }
+
+        .total-wrapper {
+          width: calc(25% - 6px);
+          margin: 0 3px;
+          padding: .3rem;
+          border-radius: 20px;
+          // background-color: rgb(79, 196, 21); // green
+          // background-color: rgb(59, 148, 14); // green dark
+          border: 4px outset rgb(186, 180, 180); // bg 
+          .total-text {
+            font-size: .8rem;
+            margin-top: 3px;
+            // color: yellow;
+            color: rgb(6, 223, 6); // bg
+            text-align: center;
+            letter-spacing: 1px;
+          }
+          .total-point {
+            font-size: 1.2rem;
+            text-align: center;
+            margin-top: 5px;
+            color: rgb(255, 255, 255);
+          }
+        }
+
+        .lost-wrapper {
+          width: calc(25% - 6px);
+          margin: 0 3px;
+          padding: .3rem;
+          border-radius: 20px;
+          // background-color: rgb(255, 255, 255); // white 
+          border: 4px outset rgb(186, 180, 180); // bg 
+          .lost-text {
+            font-size: .8rem;
+            margin-top: 3px;
+            color: #fff; // bg
+            // color: rgb(238, 60, 60); // red
+            text-align: center;
+            letter-spacing: 1px;
+          }
+          .bet {
+            display: none;
+          }
+          .lost-point {
+            // color: #333; // black
+            color: rgb(0, 174, 255); // bg 
+            font-size: 1.2rem;
+            text-align: center;
+            margin-top: 5px;
+          }
+        }
+        .dept-text {
+          color: rgb(0, 174, 255) !important; // bg 
+        }
+        .dept-point {
+          color: #333; // black
+          color: #fff; // bg 
+          font-size: 1.2rem;
+          text-align: center;
+          margin-top: 5px;
+        }
+      }
+    }
+
+    .machine-container {
+      margin: 0 5px;
+      main {
+        width: 100%;
+        height: 250px;  // before change 250px // change to 220px 
+        padding: 10px 3px 40px; // before change 40px 
+        background-color: #ecf0f1;
+        // background-color: #484949;
+        background-color: #313232;
+        // border: 4px solid #fff; // white
+        border: 4px solid rgb(103, 102, 102); // bg
+        border-radius: 12px;
+        margin: 10px auto 15px; 
+        display: flex;
+        justify-content: space-around;
+        .panel {
+          width: calc(33% - 10px);
+          height: calc(75% - 10px);
+          margin: 5px;
+          position: relative;  
+          background-color: #fff; // for transparent img //
+          border-radius: 10px; // for transparent img //
+          img {
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+          }
+          .stop {
+            width: 95%;
+            height: 60px;
+            font-size: 1.2rem;
+            text-align: center;
+            line-height: 50px;
+            letter-spacing: 1px;
+            // color: #fff; // white
+            // background-color: #f0343a; // red
+            color: #ff1f27; // bg
+            border: 5px outset #ef454a;
+            box-shadow: 0 6px 0 #9a423b;  // pc画面用 //////// 
+            box-shadow: 0 4px 0 #9a423b;  // smart phone
+            border-radius: 30px;
+            cursor: pointer;
+            margin: 14px auto 0;  // this check //
+              padding-top: 1px;
+            &:active {
+              margin-top: 20px;  // this check //
+              box-shadow: 0 0px 0 #9a423b;
+            }
+          }
+        }
+      }
+        // 元は縦に伸びた画像 <main> height: 250px; padding: 10px 3px 40px;
+        // .stop -- margin: 14px auto 0; &:active: margin-top: 20px; normally 18px;
+
+        // 横画面サイズ <main> height: 220px; padding: 10px 3px 40px;
+        // .stop -- margin: 8px auto 0; &:active: margin-top: 14px; 
+
+      #spin {
+        width: 100%;
+        height: 60px;
+        font-size: 1.3rem;
+        text-align: center;
+        line-height: 47.5px;
+        letter-spacing: 2px;
+        color: #fff; // white
+        color: #45b4ff; // bg // dot
+        // color: #2bb0e1; // bg  // new
+        // background-color: #0c8bdf; // blue
+        border: 5px outset #3498db; // dot
+        // border: 5px outset #2bb0e1; // bg // new
+        box-shadow: 0 6px 0 #226794;
+        border-radius: 30px;
+        cursor: pointer;
+        margin: 14px auto 0;
+          padding-top: 2px;
+        &:active {
+          margin-top: 20px; 
+          box-shadow: 0 0px 0 #226794;
+        }
+      }
+    }
+  }
+}
+
+// .untitled {  // cyan blue //
+//   width: 90%;
+//   height: 150px;
+//   border: 8px solid rgb(84, 82, 81);
+//   border-radius: 20px;
+//   margin: 0 auto;
+//   position: absolute;
+//   top: 570px;
+//   left: 0;
+//   right: 0;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: center;
+//   .untitled-img1 {
+//     font-size: 6.6rem;
+//     font-family: 'Carattere', cursive;
+//     margin-top: 20px;
+//     margin-right: 5px;
+//     color: rgb(203, 79, 22);
+//     text-shadow: 3PX 3px 10px #3498db;
+//     -webkit-text-stroke: 1px  #2bb0e1;
+//     -webkit-text-fill-color: #333;
+//     transform: rotate(7deg);
+//   }
+// }
+
+.untitled { 
+  width: 90%;
+  height: 140px;  //  140px for 67plus, 125px for 12
+  border: 8px solid rgb(70, 69, 68);
+  border-radius: 20px;
+  margin: 0 auto;
+  position: absolute;
+  top: 570px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .untitled-img {
+    width: 150px; // 150px for 67plus, 140px for 12
+    height: 150px; // 120px for 12
+    margin: -5px -15px;
+  }
+  .black-layer {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(51, 51, 51, 0.81);
+    position: absolute;
+    border-radius: 10px;
+  }
+}
+
+// ---------------------------------------------------------------------
+
+.js_inActive {
+  opacity: .5;
+}
+
+.js_unMatched-effect {  // panel // shadow effect //
+  background-color: rgba(51, 51, 51, 0.146);
+  background-color: rgba(51, 51, 51, 0.392); // black background用
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%; 
+  border-radius: 10px;
+}
+
+// --------------------------------------------------------------------
+
+.js_stopBtnAnimation {
+  animation: stopBtnAnimation .1s; // stop .1s //
+}
+.js_spinBtnAnimation {
+  animation: spinBtnAnimation .2s; // spin .2s //
+}
+
+@keyframes stopBtnAnimation {
+  0% {
+    transform: translateY(0px);
+    box-shadow: 0 4px 0 #9a423b;
+  }
+  50% {
+    transform: translateY(6px);  //  box shadow px + 2px //
+    box-shadow: 0 0px 0 #9a423b;
+  }
+  100% {
+    transform: translateY(0px);
+    box-shadow: 0 4px 0 #9a423b;
+  }
+}
+
+@keyframes spinBtnAnimation {
+  0% {
+    transform: translateY(0px);
+    box-shadow: 0 6px 0 #226794;
+  }
+  50% {
+    transform: translateY(8px); // box shadow px + 2px //
+    box-shadow: 0 0px 0 #226794;
+  }
+  100% {
+    transform: translateY(0px);
+    box-shadow: 0 6px 0 #226794;
+  }
+}
+
+
+// -----------------------------------------------------
+
+.js_insertPoint-textColorBright {
+  color: rgb(196, 255, 17) !important; 
+}
+
+.js_bet2x-textColorBright {
+  color: rgb(250, 46, 250) !important; 
+}
+
+.js_bet5x-textColorBright {
+  color: rgb(255, 37, 34) !important; 
+}
+
+.js_winRed { 
+  color: #ff1f27 !important; 
+}
+
+// -----------------------------------------------------
+
+.js_insertPoint-activeEffect {    
+  box-shadow: 
+  3px 3px 10px rgb(179, 255, 0), 
+  3px -3px 10px rgb(179, 255, 0), 
+  -3px 3px 10px rgb(179, 255, 0),
+  -3px -3px 10px rgb(179, 255, 0);
+}
+
+.js_bet2x-activeEffect {
+  box-shadow: 
+  3px 3px 12px 1px rgb(228, 8, 221),   
+  3px -3px 12px 1px rgb(228, 8, 221),  
+  -3px 3px 12px 1px rgb(228, 8, 221),  
+  -3px -3px 12px 1px rgb(228, 8, 221); 
+}
+
+.js_bet5x-activeEffect {
+  box-shadow: 
+  3px 3px 12px 1px rgb(255, 25, 0), 
+  3px -3px 12px 1px rgb(255, 25, 0), 
+  -3px 3px 12px 1px rgb(255, 25, 0),
+  -3px -3px 12px 1px rgb(255, 25, 0);
+}
+
+// -----------------------------------------------------
+
+.js_checkOut-win {
+  color: #fff !important;
+  // background-color: rgb(255, 85, 83) !important; // bg off
+  border: 8px outset rgb(252, 55, 53) !important; 
+}
+.js_checkOut-lost {
+  color: #fff !important;
+  // background-color: #0c8bdf !important; // bg off
+  border: 8px outset #3498db !important;
+}
+
+// -----------------------------------------------------
+//-------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
